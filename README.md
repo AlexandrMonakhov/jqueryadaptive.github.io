@@ -1,0 +1,1 @@
+# jqueryadaptive.github.io
