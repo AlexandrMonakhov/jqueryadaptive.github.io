@@ -1,0 +1,122 @@
+/* Import _misc */
+@import '_misc/_colors';
+@import '_misc/_fonts';
+@import '_misc/_mixin';
+
+/* Base settings */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Main styles */
+
+.menu {
+    &-link {
+        z-index: 9;
+        display: block;
+        position:fixed;
+        top: 10px;
+        left: 10px;
+        background-color: #fff;
+        width:50px;
+        height:50px;
+        box-shadow: 1px 1px 10px rgba(0,0,0,.5);
+        border-radius: 50%;
+        span, span:before, span:after {
+            position: absolute;
+            left: 50%;
+            margin-left: -9px;
+            top: 50%;
+            margin-top: -1px;
+            display: block;
+            height: 2px;
+            width: 18px;
+            background-color: #000;
+        }
+        span:before {
+            content: '';
+            transition: all .2s;
+            margin-top: -6px;
+        }
+        span:after {
+            content: '';
+            transition: all .2s;
+            margin-top: 4px;
+        }
+        &_active span {
+            background: transparent;
+            &:before {
+                transform: rotate(135deg);
+                margin-top: 0;
+            }
+            &:after {
+                transform: rotate(-135deg);
+                margin-top: 0;
+            }
+        }
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(128,0,128,.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    left: -100vw;
+    transition: all .5s;
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            a {
+                display: block;
+                width: 100vw;
+                color: #ffffff;
+                line-height: 4;
+                font-weight: 100;
+                letter-spacing: 4px;
+                &:hover {
+                    transition: all .3s;
+                    background: rgba(255,255,255,.5);
+                    text-decoration: none;
+                }
+            }
+        }
+    &_active {
+        left: 0;
+    }
+}
+
+section {
+    padding: 20px 100px;
+    height: 100vh;
+}
+
+.image {
+    &_contrainer {
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    img {
+        width: 400px;
+        margin-right: 30px;
+        margin-bottom: 40px;
+    }
+}
+    &_overlay {
+        width: 900px;
+        margin: 0 auto;
+    }
+    &_shadow {
+        box-shadow: 1px 1px 30px #000;
+    }
+}
